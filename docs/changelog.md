@@ -4,6 +4,8 @@ Versions follow [Semantic Versioning](https://semver.org/): `<major>.<minor>.<pa
 
 ## Unreleased
 
+## 1.0.1
+
 * Bundle the operator panel in every distribution, not only in the sdist. A
   wheel built straight from a checkout - what `pip install git+https://...`
   does - shipped no frontend at all, and the panel refused to start. The
