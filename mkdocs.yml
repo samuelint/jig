@@ -1,13 +1,13 @@
 # Project information
 site_name: Jig
-site_url: https://github.com/samuelint/jig/
+site_url: https://github.com/Femtum/jig/
 site_author: Everypin
 site_dir: public
 docs_dir: ./docs
 
 # Repository
-repo_name: samuelint/jig
-repo_url: https://github.com/samuelint/jig
+repo_name: Femtum/jig
+repo_url: https://github.com/Femtum/jig
 
 theme:
   name: material
@@ -149,7 +149,7 @@ extra:
     - icon: everypin/logo
       link: https://everypin.io/   
     - icon: fontawesome/brands/github
-      link: https://github.com/everypinio/jig
+      link: https://github.com/Femtum/jig
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/pytest-jig/
     - icon: fontawesome/brands/discord

@@ -40,7 +40,7 @@ Jig allows you to:
 * Store test results on the [StandCloud](https://standcloud.everypin.io/) analytics platform.
 
 <h1 align="center">
-    <img src="https://raw.githubusercontent.com/samuelint/jig/main/docs/img/jig_panel.gif" alt="jig panel" style="width:550px;">
+    <img src="https://raw.githubusercontent.com/Femtum/jig/main/docs/img/jig_panel.gif" alt="jig panel" style="width:550px;">
 </h1>
 
 ## To Install
@@ -53,7 +53,7 @@ The distribution is named `pytest-jig`; the import name and the CLI stay `jig`.
 To install the unreleased `main` branch instead:
 
 ```bash
-pip install git+https://github.com/samuelint/jig.git
+pip install git+https://github.com/Femtum/jig.git
 ```
 
 ## Getting Started

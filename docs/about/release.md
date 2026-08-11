@@ -34,7 +34,7 @@ publisher, which both reserves the name and authorizes the workflow. Go to
 | Field | Value |
 | --- | --- |
 | PyPI Project Name | `pytest-jig` |
-| Owner | `samuelint` |
+| Owner | `Femtum` |
 | Repository name | `jig` |
 | Workflow name | `release.yml` |
 | Environment name | `pypi` |

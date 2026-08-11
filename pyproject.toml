@@ -66,8 +66,8 @@
         ]
 
     [project.urls]
-        Homepage = "https://github.com/samuelint/jig/"
-        Repository = "https://github.com/samuelint/jig/"
+        Homepage = "https://github.com/Femtum/jig/"
+        Repository = "https://github.com/Femtum/jig/"
 
     [project.scripts]
         # Provide `jig` executable
