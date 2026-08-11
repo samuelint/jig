@@ -103,8 +103,13 @@
     [tool.hatch.build.targets.wheel]
         packages = ["jig"]
 
-    # Custom build hook for sdist source package.
-    # It additionally runs `yarn` and `yarn build`
-    # in React app folder to bundle prod build
-    [tool.hatch.build.targets.sdist.hooks.custom]
+    # `only-packages` keeps the build script out of the sdist, but the wheel is
+    # built from that sdist and the hook below runs for every target.
+    [tool.hatch.build.targets.sdist.force-include]
+        "scripts/hatch_build.py" = "scripts/hatch_build.py"
+
+    # Custom build hook for every target. It runs `yarn` and `yarn build` in the
+    # React app folder so both the sdist and a wheel built straight from a
+    # checkout (`pip install` from git) carry the operator panel bundle.
+    [tool.hatch.build.hooks.custom]
         path = "scripts/hatch_build.py"
