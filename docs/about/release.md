@@ -64,22 +64,29 @@ regular one. No further setup is needed for later releases.
 
 ## Cutting a release
 
-1. Set the new version in `pyproject.toml`. It is the single source of truth:
-   `jig.__version__` reads it from the installed metadata, and the pipeline
-   refuses to release when the git tag disagrees with it.
-2. Move the `Unreleased` entries in `docs/changelog.md` under the new version.
-3. Reinstall the package so the local metadata matches
-   (`pip install -e .`, or `poetry install`), then run `pytest tests -m "not manual"`.
-   `tests/test_packaging.py` fails if the installed version has drifted.
-4. Merge to `main`.
-5. Tag the merge commit with the bare version — no `v` prefix — and push it:
+1. Describe the changes under the `Unreleased` heading of `docs/changelog.md`
+   and merge them to `main`.
+2. From an up-to-date `main`, run `make release` with either a semantic bump
+   rule or an explicit version:
 
 ```bash
-git tag 1.0.0
-git push origin 1.0.0
+make release VERSION=patch   # or minor, major, or 1.2.3
 ```
 
-Only tags shaped like `1.0.0` or `1.0.0rc1` trigger the release workflow.
+The command bumps `pyproject.toml`, moves the `Unreleased` changelog entries
+under the new version, commits, tags with the bare version — no `v` prefix —
+and pushes the branch and the tag together. Pushing the tag is what starts the
+release workflow; only tags shaped like `1.0.0` or `1.0.0rc1` trigger it.
+
+The release is refused before anything is written when the checkout is not an
+up-to-date, clean `main`, when the tag already exists, or when the changelog has
+no entries to release.
+
+`pyproject.toml` stays the single source of truth for the version:
+`jig.__version__` reads it from the installed metadata, and the pipeline refuses
+to release when the git tag disagrees with it. Reinstall the package after a
+release (`pip install -e .`, or `poetry install`) to realign the local metadata —
+`tests/test_packaging.py` fails while it has drifted.
 
 ## Verifying a release
 
