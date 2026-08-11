@@ -4,6 +4,12 @@ Versions follow [Semantic Versioning](https://semver.org/): `<major>.<minor>.<pa
 
 ## Unreleased
 
+* Bundle the operator panel in every distribution, not only in the sdist. A
+  wheel built straight from a checkout - what `pip install git+https://...`
+  does - shipped no frontend at all, and the panel refused to start. The
+  frontend build now runs through corepack against the yarn version pinned in
+  `package.json`, so it no longer depends on whichever yarn is installed.
+
 ## 1.0.0
 
 * Publish to PyPI as `pytest-jig`: `pip install pytest-jig`. The `jig` name was
