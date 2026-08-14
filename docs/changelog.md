@@ -4,6 +4,12 @@ Versions follow [Semantic Versioning](https://semver.org/): `<major>.<minor>.<pa
 
 ## Unreleased
 
+* Commit the operator panel's `yarn.lock` in the Yarn 4 format. It was still a
+  Yarn 1 lockfile while `package.json` pins Yarn 4, so building the panel had
+  to rewrite it - which yarn refuses whenever `CI` is set. Installing the
+  package from a pipeline failed on that rewrite. Regenerating the lockfile
+  also drops the requirements it had kept from an older dependency set.
+
 ## 1.0.1
 
 * Bundle the operator panel in every distribution, not only in the sdist. A
