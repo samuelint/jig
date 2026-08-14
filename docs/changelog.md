@@ -4,6 +4,8 @@ Versions follow [Semantic Versioning](https://semver.org/): `<major>.<minor>.<pa
 
 ## Unreleased
 
+## 1.0.2
+
 * Commit the operator panel's `yarn.lock` in the Yarn 4 format. It was still a
   Yarn 1 lockfile while `package.json` pins Yarn 4, so building the panel had
   to rewrite it - which yarn refuses whenever `CI` is set. Installing the

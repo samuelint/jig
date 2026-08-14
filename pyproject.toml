@@ -5,7 +5,7 @@
     # Distribution name on PyPI. The import name stays `jig`; `jig.__version__`
     # resolves this distribution's metadata, so keep both in sync.
     name = "pytest-jig"
-    version = "1.0.1"
+    version = "1.0.2"
     description = "Jig library for device testing"
     license = "GPL-3.0-or-later"
     authors = [{ name = "Everypin", email = "info@everypin.io" }]
